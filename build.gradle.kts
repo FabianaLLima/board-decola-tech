@@ -1,5 +1,6 @@
 plugins {
     id("java")
+    kotlin("jvm")
 }
 
 group = "org.example"
@@ -15,8 +16,12 @@ dependencies {
     implementation("org.projectlombok:lombok:1.18.34")
 
     annotationProcessor("org.projectlombok:lombok:1.18.34")
+    implementation(kotlin("stdlib-jdk8"))
 }
 
 tasks.test {
     useJUnitPlatform()
+}
+kotlin {
+    jvmToolchain(17)
 }
